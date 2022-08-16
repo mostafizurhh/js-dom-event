@@ -9,7 +9,13 @@ document.getElementById('makeBrown').addEventListener('click', function () {
 });
 
 // method 2 -->input field update
-document.getElementById('lightPink').addEventListener('click', function () {
-    document.body.style.backgroundColor = 'lightpink';
-});
 
+document.getElementById('updateButton').addEventListener('click', function () {
+    const inputfield = document.getElementById('inputField');
+    const inputText = inputfield.value;
+
+    const p = document.getElementById('updateParagraph');
+    p.innerText = inputText;
+    const newData = inputText;
+    inputfield.value = '';
+})
