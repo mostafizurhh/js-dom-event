@@ -16,6 +16,7 @@ document.getElementById('updateButton').addEventListener('click', function () {
 
     const p = document.getElementById('updateParagraph');
     p.innerText = inputText;
-    const newData = inputText;
     inputfield.value = '';
 })
+
+
