@@ -7,7 +7,8 @@ document.getElementById('deleteBtn').addEventListener('click', function () {
 // step 2. write 'delete' the the btn will enable and text will be hided by clicking the button
 document.getElementById('textField').addEventListener('keyup', function (event) {
     //target the value of input field to get everything typed
-    const text = event.target.value;
+    // const text = event.target.value;
+    const text = document.getElementById('textField').value;
     //get the delete button
     const deleteButton = document.getElementById('deleteBtn');
     // add condition for the inputfield and button
