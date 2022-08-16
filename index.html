@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Event</title>
+</head>
+
+<body>
+    <main>
+        <h1>DOM er ajker special event</h1>
+        <button onclick="console.log('rayn')">click me</button>
+        <button onclick="console.log('shiuli')">2nd button</button>
+        <button ondblclick="console.log('ami')">3rd button</button>
+        <br><br>
+        <!-- 1st method onclick event in html document -->
+        <button onclick="document.body.style.backgroundColor = 'green'">Make Green</button>
+        <br><br>
+
+        <!--------------------------WILL USE THIS ------------------->
+        <!-- 2nd method onclick event in html document -->
+        <button onclick="makered()">Make Red</button>
+        <br><br>
+        <!----------------------------------------------------------->
+
+        <!-- 3rd method onclick event in html document -->
+        <button id="makePurple">Make Purple</button>
+        <br><br>
+        <!-- 4th method onclick event in html document -->
+        <button id="makeCoral">Make Coral</button>
+        <br><br>
+        <!-- 5th method onclick event in html document -->
+        <button id="makeYellow">Make Yellow</button>
+        <br><br>
+        <!-- 6th method onclick event in html document -->
+        <button id="makeBlue">Make Blue</button>
+        <br><br>
+
+        <!--------------------------WILL USE THIS------------------------>
+        <!-- 7th method onclick event in html document -->
+        <button id="makeOrange">Make Orange</button>
+        <!--------------------------------------------------------------->
+
+    </main>
+
+    <script src="event.js"></script>
+</body>
+
+</html>
