@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Delete By Writing</title>
+</head>
+
+<body>
+    <h1 id="removableText">When user write delete inside the input field , delete button will be enabled <br>
+        and when user
+        click on the delete button this text
+        will be
+        removed/hided.</h1>
+    <input id="inputField" type="text">
+    <button id="deleteBtn" disabled>Delete</button>
+
+    <script>
+        document.getElementById('inputField').addEventListener('keyup', function () {
+            const inputFieldText = document.getElementById('inputField').value;
+            const deleteButton = document.getElementById('deleteBtn');
+            if (inputFieldText == 'delete') {
+                deleteButton.removeAttribute('disabled');
+            }
+            else {
+                deleteButton.setAttribute('disabled', true);
+            }
+        })
+        document.getElementById('deleteBtn').addEventListener('click', function () {
+            const hidedText = document.getElementById('removableText');
+            hidedText.style.display = 'none'
+        })
+    </script>
+</body>
+
+</html>

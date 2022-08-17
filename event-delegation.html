@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+</head>
+
+<body>
+    <section>
+        <h1>Event delegation is a way to add event listener once for multiple elements with support for adding extra
+            child.
+        </h1>
+
+        <ul id="ulList">
+            <li class="item">Lorem, ipsum dolor.</li>
+            <li class="item">Accusamus, iusto neque.</li>
+            <li class="item">Quos, odio deserunt.</li>
+            <li class="item">Perferendis, consectetur est.</li>
+            <li class="item" onclick="">Minima, voluptatem ullam?</li>
+        </ul>
+        <button id="addItem">Add Item</button>
+
+    </section>
+
+    <script>
+        /*-----------------------Event Bubbling--------------------*/
+        // // get elements by class name
+        // const items = document.getElementsByClassName('item');
+        // // run a for loop to get all elements of the class, then add eventlistener
+        // for (const item of items) {
+        //     //add eventlistener to all item
+        //     item.addEventListener('click', function (event) {
+        //         //remove the item/target inside the parentNode
+        //         event.target.parentNode.removeChild(event.target);
+        //     })
+        // }
+
+        /*-----------------------Event Delegation------------------*/
+        // eventlistener set on parent
+        document.getElementById('ulList').addEventListener('click', function (event) {
+            event.target.parentNode.removeChild(event.target);
+        })
+
+
+        // when click on the button one item will be added
+        document.getElementById('addItem').addEventListener('click', function () {
+            const ul = document.getElementById('ulList'); //get parent id
+            const li = document.createElement('li'); //create new item
+            li.innerText = 'New item Added'; // add inner text
+            li.classList.add('item'); //class added
+            ul.appendChild(li); //add child element inside parent element
+        })
+    </script>
+</body>
+
+</html>

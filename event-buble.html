@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubble And Stop Propagating</title>
+    <style>
+        section {
+            border: 2px solid red;
+        }
+
+        div {
+            border: 2px solid blue;
+        }
+
+        ul {
+            border: 2px solid yellowgreen;
+        }
+
+        #items4 {
+            border: 2px solid coral;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="section">
+        <div id="division">
+            <h1 id="h1">Understanding Event Bubble Function</h1>
+            <ul id="ulList">
+                <li id="items1">Lorem, ipsum dolor.</li>
+                <li id="items2">Lorem, ipsum dolor.</li>
+                <li id="items3">Lorem, ipsum dolor.</li>
+                <li id="items4">Lorem, ipsum dolor.</li>
+                <li id="items5">Lorem, ipsum dolor.</li>
+                <li id="items6">Lorem, ipsum dolor.</li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('section').addEventListener('click', function () {
+            console.log('section clicked')
+        })
+        document.getElementById('division').addEventListener('click', function () {
+            console.log('div clicked')
+        })
+        document.getElementById('h1').addEventListener('click', function () {
+            console.log('h1 clicked')
+        })
+        document.getElementById('ulList').addEventListener('click', function () {
+            console.log('Ul clicked')
+        })
+        document.getElementById('items4').addEventListener('click', function (event) {
+            console.log('item4 clicked')
+            event.stopPropagation();
+        })
+        document.getElementById('items4').addEventListener('click', function (event) {
+            console.log('item4 2nd time clicked')
+            event.stopImmediatePropagation();
+        })
+        document.getElementById('items4').addEventListener('click', function (event) {
+            console.log('item4 3rd time clicked')
+        })
+        document.getElementById('items4').addEventListener('click', function (event) {
+            console.log('item4 4th time clicked')
+        })
+    </script>
+</body>
+
+</html>
